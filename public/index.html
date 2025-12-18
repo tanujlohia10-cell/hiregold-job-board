@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HireGold | Premium Job Board</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">HIRE<span>GOLD</span></div>
+        <div class="nav-links">
+            <a href="#">Find Jobs</a>
+            <a href="#">Companies</a>
+            <button class="btn-outline">Post a Job</button>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Your Next Career Move, <span class="gold-text">Elevated.</span></h1>
+        <p>Access exclusive opportunities across all industries.</p>
+        
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Job title or keywords">
+            <button class="btn-primary" onclick="searchJobs()">Search Jobs</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <aside class="filters">
+            <h3>Filters</h3>
+            
+            <div class="filter-group">
+                <label>Date Posted</label>
+                <select id="dateFilter" onchange="filterJobs()">
+                    <option>All Time</option>
+                    <option>Last 24 Hours</option>
+                    <option>Last 7 Days</option>
+                    <option>Last 30 Days</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label>Job Type</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="ft" onchange="filterJobs()"> <label for="ft">Full-time</label><br>
+                    <input type="checkbox" id="pt" onchange="filterJobs()"> <label for="pt">Part-time</label><br>
+                    <input type="checkbox" id="ct" onchange="filterJobs()"> <label for="ct">Contract</label><br>
+                    <input type="checkbox" id="rm" onchange="filterJobs()"> <label for="rm">Remote</label>
+                </div>
+            </div>
+        </aside>
+
+        <section class="job-feed" id="jobFeed">
+            <!-- Jobs will be loaded here dynamically -->
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
